@@ -1,0 +1,32 @@
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+}
+.contact-section img {
+    width: 128px;
+    scale: 1/1;
+    margin: 0 20px;
+}
+.frist-contact {
+    display: flex;
+    padding: 20px;
+}
+.secend table {
+    margin: 20px;
+    height: 400px;
+    width: 200px;
+}
+.continer {
+    display: flex;
+}
+.fake-map {
+    width: 480px;
+    scale: 1/1;
+    background-color: grey;
+    margin: 20px;
+}
+input {
+    width: 100%;
+    margin-bottom: 8px ;
+}
