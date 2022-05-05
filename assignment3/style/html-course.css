@@ -1,0 +1,28 @@
+.html-card {
+    margin:50px;
+}
+.html-card img {
+    width: 128px;
+    float: left;
+    margin-right: 30px;
+}
+.article-title {
+    color: darkblue;
+}
+.article {
+    display: flex;
+    margin-bottom: 20px;
+}
+.card {
+    background-color: #9bb1ff;
+    margin: 20px;
+    padding: 8px;
+    border-radius: 4px;
+    color: darkblue;
+    box-shadow: 6px 6px 4px rgba(0,0,0,.5);
+}
+.card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
