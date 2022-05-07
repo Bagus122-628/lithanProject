@@ -1,0 +1,91 @@
+
+
+h3 {
+    text-align: center;
+    font-size: 400%;
+    margin: 12px auto 4px;
+}
+.continer-section {
+    display: flex;
+
+}
+.continer-section section {
+    padding: 20px;
+}
+.partner-section {
+    padding-top: 20px ;
+    background-color: #bfd7ff;
+    text-align: center;
+}
+.partner {
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 24px;
+    flex-wrap: wrap;
+}
+.partner img {
+    width: 128px;
+    height: 60px;
+    margin: 20px;
+}
+ .couse-section {
+     display: flex;
+     height: 600px;
+     padding: 40px;
+     align-items: baseline;
+ }
+.couse-section img {
+    height: 128px ;
+}
+.couse-section div {
+    background-color: #fff;
+    width: 256px;
+    margin: 20px;
+    padding: 10;
+    text-align: center;
+    box-shadow: 6px 6px 4px rgba(0,0,0,.5);
+    border-radius: 6px;
+}
+.couse-section a {
+    display: block;
+    padding: 4px;
+    text-decoration: none;
+    background-color: #5099f4;
+    color: white;
+}
+.hero-image {
+    width: 100%;
+    filter:brightness(20%);
+}
+.float-text {
+    position: absolute;
+    color: white;
+    top: 26%;
+    left: 10%;
+    font-size: 400%;
+}
+
+
+h5.date {
+color: white;    
+width: 128px;
+    padding: 20px;
+    background-color: #003f9a;
+    margin: 5px 20px;
+}
+.schdule-page {
+    display: flex;
+    align-items: center;
+}
+.schdule-section {
+    height: 100%;
+}
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile-section img {
+    width: 248px;
+    padding: 60px;
+}

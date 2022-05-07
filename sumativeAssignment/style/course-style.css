@@ -1,0 +1,17 @@
+.course-section {
+    margin: 50px;
+
+}
+.course-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.course-card {
+    padding: 4px;
+    margin: 20px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 8px 4px rgba(84, 84, 237, 0.6);
+}
+.course-card img {
+    width: 256px;
+}

@@ -1,0 +1,126 @@
+<html lang="en">
+<head>
+
+    <title>Home page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        section {
+            background-color: lightblue;
+        }
+        .profile-section{
+            display: flex;
+            padding: 48px;
+
+
+        }
+        .login-form {
+            margin: auto;
+            border-radius: 4px;
+            border: 1px solid gray;
+            border-top: 10px solid blue ;
+            width: 480px;
+            height: fit-content;
+            padding:  24px;
+            background-color: #fff;
+        }
+        input,select {
+            width: 400px;
+            display: block;
+            margin: 4px 12px 10px;
+        }label {
+            margin: 12px 14px 4px;
+        }
+    </style>
+</head>
+<body>
+
+ <section>
+
+     <div class="layout profile-section">
+         <div class="login-form">
+           <form id="subForm">
+            <h1 align="center" style="font-size: 2em;" >Registration</h1>
+            <label for="name">Your Name </label><br>
+            <input id="name"   placeholder="name" type="text" required >
+            <label for="email">Email </label><br>
+            <input id="email" placeholder="emali" type="email"required >
+            <label for="contry">Where are you from</label><br>
+            <input id="contry" placeholder="your country" type="text" required >
+            <label for="number">Number</label><br>
+            <input type="tel" name="number" id="numbers" >
+            <label for="cpurse">Select course you want</label>
+            <select name="course" id="select-regis" ><br>
+                <option value="html">html essentsial</option>
+                <option value="css">css basic</option>
+                <option value="js">js intro</option>
+            </select><br>
+           <input type="submit" value="submit">
+           </form>
+         </div>
+    </div>
+</section>
+
+
+
+<script>
+ 
+// $(document).ready(function () {
+//   $("form").on("submit", function (event) {
+//     event.preventDefault();
+//     window.location = "pages/thanks-page.html"
+//     localStorage.setItem(
+//       `formData${Math.random() * 100}`,
+//       JSON.stringify({
+//         name: $("#name").val(),
+//         email: $("#email").val(),
+//         country: $("#contry").val(),
+//         number: $("#numbers").val(),
+//         course: $("#select-regis").val(),
+//       })
+//     );
+//     // dataUser.push=JSON.stringify({
+//     //     name: $("#name").val(),
+//     //     email: $("#email").val(),
+//     //     country: $("#contry").val(),
+//     //     number: $("#numbers").val(),
+//     //     course: $("#select-regis").val(),
+        
+//     // })
+//   });
+// });
+$(document).ready(function () {
+  $("form").on("submit", function (event) {
+    event.preventDefault();
+    window.location = "pages/thanks-page.html"
+  if (localStorage.getItem("formData") === null) {
+    let formData = [];
+
+    formData.push({
+        name: $("#name").val(),
+        email: $("#email").val(),
+        country: $("#contry").val(),
+        number: $("#numbers").val(),
+        course: $("#select-regis").val(),
+    });
+    console.log(formData);
+    localStorage.setItem("formData", JSON.stringify(formData));
+  } else {
+    let storedData = JSON.parse(localStorage.getItem("formData"));
+
+    const formData = {
+        name: $("#name").val(),
+        email: $("#email").val(),
+        country: $("#contry").val(),
+        number: $("#numbers").val(),
+        course: $("#select-regis").val(),
+    };
+
+    storedData.push(formData);
+    localStorage.setItem("formData", JSON.stringify(storedData));
+  }
+});
+});
+// export {dataUser};
+</script>
+</body>
+</html>

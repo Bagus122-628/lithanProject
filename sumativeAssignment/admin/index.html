@@ -1,0 +1,295 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>Admin B Learning</title>
+    <style>
+        section, 
+        .login-section,
+        .admin-section,
+        .form-section {
+            height: 100%;
+            width: 100%;
+            background-color: #fff;
+            position: absolute;
+            display: flex;
+            top: 0;
+            left: 0;
+        }div.form-section{
+            background-color: rgba(255, 255, 255, .4);
+        }#subForm, .login-container {
+            width: 240px;
+            margin: auto;
+            border: 4px solid rgb(80, 80, 252);
+            box-shadow: 2px 2px 12px rgba(3, 3, 3, .4);
+            border-radius: 12px;
+            padding: 24px;
+        }.admin-container{
+            margin:24px auto;
+        }
+        input{
+            width: 100%;
+            padding: 4px;
+        }table, th, td {
+            border: 1px solid rgb(133, 133, 165);
+            border-collapse: collapse;
+        }
+        th,td{
+            padding:8px 16px;
+
+        }tr:nth-child(even){
+            background-color: rgb(202, 212, 216);
+        }th{
+            background-color: rgb(116, 169, 187);
+        }button{
+            padding: 6px;
+        }#subForm{
+            background-color: #fff;
+
+        }
+
+    </style>
+</head>
+<body>
+<section>
+    <div class="admin-section">
+        <div class="admin-container">
+            <h1 class="bgc-blue">Welcom Master <input style="width: 48px ;" type="button" value="add" onclick="addData()"></h1>
+            <div id="content-table">
+                <table id="data-table">
+                    
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="form-section">
+       
+    </div>
+    <div class="login-section" value="test">
+        <form class="login-container">
+            <h1 align="center">Only for Admin</h1>
+            <label for="user">Username </label><br>
+            <input type="text" name="user" id="user" autofocus><br><br>
+            <label for="passwd">Password</label><br>
+            <input id="passwd" name="passwd" type="password"><br><br>
+            <input type="button" value="Login" onclick="myfunction()" >
+        </form>
+    </div>
+
+    
+</section>
+<script>
+// import {dataUser} from `.profile.html`;
+const json = [];
+
+function myfunction() {
+    let x = document.querySelector('#user').value;
+    let y = document.querySelector('#passwd').value;
+    let z = document.querySelector('.login-section');
+    let a = document.querySelector('.form-section');
+    // console.info(x,y,z.style.display);
+    if(x == 'bagus' && y == 'nanda'){
+        z.style.display = "none";
+        a.style.display = "none";
+        // console.info('true');
+        userData();
+
+    } else {
+        alert('your user not valid')
+    }
+}
+
+
+
+let jsonData = JSON.parse(localStorage.getItem("formData"));
+function userData(){
+// getLocalStorageData();
+// function getLocalStorageData() {
+//     for (let i = 0; i < localStorage.length; i++) {
+//         const formData = localStorage.getItem(localStorage.key(i));
+        
+//         json.push(JSON.parse(formData));
+showData();
+    }
+//}};
+function showData(){
+    document.querySelector("table").innerHTML=
+    `<tr>
+    <th>No</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th>Phone</th>
+    <th>Course</th>
+    <th>Action</th>
+    </tr>`;
+
+    let table = ``;
+jsonData.map((value, index) => {
+  table += `<tr>
+            <td>${index + 1}</td>
+            <td>${value.name}</td>
+            <td>${value.email}</td>
+            <td>${value.country}</td>
+            <td>${value.number}</td>
+            <td>${value.course}</td>
+            <td>
+            <button  onclick='editData(${index})'>Edit</button>
+            <button onclick='delData(${index})'>Delete</button>
+            </td>
+            </tr>`;
+    });
+    document.querySelector("table").insertAdjacentHTML("beforeend", table);
+
+}
+
+// function userData(){
+// // getLocalStorageData();
+// // function getLocalStorageData() {
+// //     for (let i = 0; i < localStorage.length; i++) {
+// //         const formData = localStorage.getItem(localStorage.key(i));
+        
+// //         json.push(JSON.parse(formData));
+// //     }
+//     showData();}
+// //}};
+
+// function showData(){
+//     let table = ``;
+// json.map((value, index) => {
+//   table += `<tr>
+//             <td>${index + 1}</td>
+//             <td>${value.name}</td>
+//             <td>${value.email}</td>
+//             <td>${value.country}</td>
+//             <td>${value.number}</td>
+//             <td>${value.course}</td>
+//             <td>
+//             <button  onclick='editData(${index})'>Edit</button>
+//             <button onclick='delData(${index})'>Delete</button>
+//             </td>
+//             </tr>`;
+//     });
+//     document.querySelector("table").insertAdjacentHTML("beforeend", table);
+
+// }
+function addData(){
+    document.querySelector(`.form-section`).style.display = ""; 
+    document.querySelector('.form-section').innerHTML =
+    ` <form id="subForm">
+            <h1 align="center" style="font-size: 2em;" >Registration</h1>
+            <label for="name">Your Name </label><br>
+            <input id="name"   placeholder="name" type="text"value="">
+            <label for="email">Email </label><br>
+            <input id="email" placeholder="emali" type="email"value="">
+            <label for="contry">Where are you from</label><br>
+            <input id="contry" placeholder="your country" type="text" value="">
+            <label for="number">Number</label><br>
+            <input type="tel" name="number" id="numbers" value="">
+            <label for="cpurse">Select course you want</label>
+            <select name="course" id="select-regis" value=""><br>
+                <option value="html">html essentsial</option>
+                <option value="css">css basic</option>
+                <option value="js">js intro</option>
+            </select><br><br>
+            
+            <input type="button" value="submit" style="margin-bottom:8px ;" onclick="addForm()">
+            <input type="reset" value="cencel" onclick="cencelSub()" >
+        </form>`
+
+}
+function addForm(){
+    let storedData = JSON.parse(localStorage.getItem("formData"));
+
+const formData = {
+    name: $("#name").val(),
+    email: $("#email").val(),
+    country: $("#contry").val(),
+    number: $("#numbers").val(),
+    course: $("#select-regis").val(),
+};
+
+storedData.push(formData);
+jsonData.push(formData)
+localStorage.setItem("formData", JSON.stringify(storedData));
+document.querySelector(`.form-section`).style.display = "none"; 
+
+showData();
+}
+
+function editData(id){
+    console.info(id);
+    console.info(jsonData[id].name)
+    let x = jsonData[id];
+    let formData = [];
+    document.querySelector(`.form-section`).style.display = ""; 
+    document.querySelector('.form-section').innerHTML =
+    ` <form id="subForm">
+            <h1 align="center" style="font-size: 2em;" >Registration</h1>
+            <label for="name">Your Name </label><br>
+            <input id="name"   placeholder="name" type="text"value="${x.name}">
+            <label for="email">Email </label><br>
+            <input id="email" placeholder="emali" type="email"value="${x.email}">
+            <label for="contry">Where are you from</label><br>
+            <input id="contry" placeholder="your country" type="text" value="${x.country}">
+            <label for="number">Number</label><br>
+            <input type="tel" name="number" id="numbers" value="${x.number}">
+            <label for="cpurse">Select course you want</label>
+            <select name="course" id="select-regis" value="${x.course}"><br>
+                <option value="html">html essentsial</option>
+                <option value="css">css basic</option>
+                <option value="js">js intro</option>
+            </select><br><br>
+            
+            <input type="button" value="submit" style="margin-bottom:8px ;" onclick="formSub(${id})">
+            <input type="reset" value="cencel" onclick="cencelSub()" >
+        </form>`
+}
+function formSub(id){
+    console.info('its work');
+    let storedData = JSON.parse(localStorage.getItem("formData"));
+        const formData = {
+            name: $("#name").val(),
+            email: $("#email").val(),
+            country: $("#contry").val(),
+            number: $("#numbers").val(),
+            course: $("#select-regis").val(),
+        };
+     jsonData[id]=formData;   
+    storedData[id]=formData;
+    localStorage.setItem("formData", JSON.stringify(storedData));
+    console.log(formData);
+    // jsonData[id] = formData;
+    // localStorage.setItem("formData", JSON.stringify(jsonData[id]));
+    document.querySelector(`.form-section`).style.display = "none"; 
+    showData();
+    console.log('you got it');
+}
+function cencelSub(){
+    
+console.info('its cencle')
+document.querySelector(`.form-section`).style.display = "none"; 
+}
+
+function delData(id){
+    console.info(id)
+    if(confirm(`are you sure to delete ${jsonData[id].name}?`)== true){
+        console.log(`${jsonData[id].name} has been remove`)
+        jsonData.splice(id, 1);
+        localStorage.setItem("formData", JSON.stringify(jsonData));
+        showData();
+    }else{
+        console.log(`cencel to delete ${jsonData[id].name}`)
+    }
+}
+
+
+
+    
+</script>
+
+</body>
+</html>

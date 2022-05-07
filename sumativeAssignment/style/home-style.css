@@ -1,0 +1,182 @@
+
+section.hero {
+    background-image: url('../img/hero1.jpg');
+    background-size: cover;
+    
+}
+h4 {
+    font-size: 20px
+}
+.hero-section {
+    height: 420px;
+    background-color: rgba(0,0,0,.8);
+    color: rgb(205, 205, 205);
+    padding-left: 36px;
+}
+.main-section h2 {
+    color: white;
+    padding-top: 68px;
+    font-size: 200%;
+    margin: 0;
+}
+.partner-section {
+    box-shadow: 0 0 8px 4px rgba(0,0,0,.4);
+    text-align: center;
+    padding: 24px;
+    background-color: #8091a091;
+}
+.partner h4 {
+    font-size: 20px;
+}
+.partner-logo {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    
+}
+.partner-logo img {
+    width: 180PX;
+    height: 100px;
+    margin: 0 20px;
+}
+.article-container {
+    padding: 10px 20px;
+}
+.mainsection {
+    padding: 48px;
+    display: flex;
+}
+.mainsection img {
+    width: 640px;
+    margin: 24px;
+
+}
+.mainsection p, dd {
+    color: rgb(69, 69, 69);
+}
+.main-article dt {
+    display: block;
+}
+.main-article {
+    display: flex;
+}
+.main-article h5 {
+    margin: 12px 0;
+}
+.main-article h5::before {
+    content:'✔ ';
+}
+.course-section {
+    padding: 50px;
+}
+.course-container {
+    display:flex;
+    overflow-x: auto;
+}
+.course-card {
+    border: 1px solid rgb(106, 126, 255);
+    box-shadow: 0 0 10px 1px rgb(172, 177, 255);
+    padding: 6px;
+    border-radius: 4px;
+    margin: 16px;
+}
+.course-card img {
+    width: 256px;
+    height: 200px;
+}
+
+
+aside {
+    padding: 24px 50px;
+}
+.testimony {
+    display: flex;
+    overflow-x: auto;
+}
+.testimony div {
+    margin: 28px 18px;
+}
+.testimony img {
+    width: 260px;
+    border-radius: 2px;
+
+}
+.testimony div {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    border: 1px solid #5465ff;
+    border-radius: 3px;
+    background-color: #9bb1ff;
+    padding: 2px;
+    filter: drop-shadow(0 8px 6px rgba(0,0,0,.5));
+    color: darkblue;
+}
+.testimony div p {
+    margin: 10px;
+}
+
+
+.mainsection {
+    overflow: auto;
+    display: flex;
+    padding-top: 20px;
+}
+img.herobanner {
+    width: 100%;
+}
+.socialMedia {
+    display: flex;
+}
+.socialMedia img {
+    height: 22px;
+    margin: 0 6px;
+}
+.article-title {
+    color: darkblue;
+}
+.article {
+    display: flex;
+    margin-bottom: 20px;
+}
+.card {
+    background-color: #9bb1ff;
+    margin: 20px;
+    padding: 8px;
+    border-radius: 4px;
+    color: darkblue;
+    box-shadow: 6px 6px 4px rgba(0,0,0,.5);
+}
+.card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.bgc-blue {
+    background-color: #bfd7ff;
+}
+.secend-section {
+    overflow: auto;
+    padding: 20px 50px;
+}
+.community {
+    display: flex;
+    justify-content: center;
+
+}
+.ocmmunity-card {
+    margin: 30px;
+    display: flex;
+}
+.ocmmunity-card h4 {
+    font-size: 64px;
+    margin: 0 10px;
+}
+.ocmmunity-card h2 {
+    margin: 14px 0 0 ;
+    font-size: 38px;
+}
+.ocmmunity-card p {
+    margin: 0;
+}
