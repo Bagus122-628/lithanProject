@@ -20,6 +20,7 @@
             left: 0;
         }div.form-section{
             background-color: rgba(255, 255, 255, .4);
+            position: fixed;
         }#subForm, .login-container {
             width: 240px;
             margin: auto;
@@ -116,6 +117,8 @@ showData();
     }
 //}};
 function showData(){
+    console.log(jsonData);
+
     document.querySelector("table").innerHTML=
     `<tr>
     <th>No</th>
@@ -180,15 +183,15 @@ function addData(){
     document.querySelector(`.form-section`).style.display = ""; 
     document.querySelector('.form-section').innerHTML =
     ` <form id="subForm">
-            <h1 align="center" style="font-size: 2em;" >Registration</h1>
+            <h1 align="center" style="font-size: 2em;" >Add Lead</h1>
             <label for="name">Your Name </label><br>
-            <input id="name"   placeholder="name" type="text"value="">
+            <input id="name"   placeholder="name" type="text"value=""required>
             <label for="email">Email </label><br>
-            <input id="email" placeholder="emali" type="email"value="">
+            <input id="email" placeholder="emali" type="email"value=""required>
             <label for="contry">Where are you from</label><br>
-            <input id="contry" placeholder="your country" type="text" value="">
+            <input id="contry" placeholder="your country" type="text" value=""required>
             <label for="number">Number</label><br>
-            <input type="tel" name="number" id="numbers" value="">
+            <input type="tel" name="number" id="numbers" value=""required>
             <label for="cpurse">Select course you want</label>
             <select name="course" id="select-regis" value=""><br>
                 <option value="html">html essentsial</option>
@@ -228,15 +231,15 @@ function editData(id){
     document.querySelector(`.form-section`).style.display = ""; 
     document.querySelector('.form-section').innerHTML =
     ` <form id="subForm">
-            <h1 align="center" style="font-size: 2em;" >Registration</h1>
+            <h1 align="center" style="font-size: 2em;" >Edit Lead</h1>
             <label for="name">Your Name </label><br>
-            <input id="name"   placeholder="name" type="text"value="${x.name}">
+            <input id="name"   placeholder="name" type="text"value="${x.name}"required>
             <label for="email">Email </label><br>
-            <input id="email" placeholder="emali" type="email"value="${x.email}">
+            <input id="email" placeholder="emali" type="email"value="${x.email}"required>
             <label for="contry">Where are you from</label><br>
-            <input id="contry" placeholder="your country" type="text" value="${x.country}">
+            <input id="contry" placeholder="your country" type="text" value="${x.country}"required>
             <label for="number">Number</label><br>
-            <input type="tel" name="number" id="numbers" value="${x.number}">
+            <input type="tel" name="number" id="numbers" value="${x.number}"required>
             <label for="cpurse">Select course you want</label>
             <select name="course" id="select-regis" value="${x.course}"><br>
                 <option value="html">html essentsial</option>

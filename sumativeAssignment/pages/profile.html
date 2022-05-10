@@ -43,11 +43,11 @@
             <label for="name">Your Name </label><br>
             <input id="name"   placeholder="name" type="text" required >
             <label for="email">Email </label><br>
-            <input id="email" placeholder="emali" type="email"required >
+            <input id="email" placeholder="email@exemple.com" type="email"required >
             <label for="contry">Where are you from</label><br>
             <input id="contry" placeholder="your country" type="text" required >
             <label for="number">Number</label><br>
-            <input type="tel" name="number" id="numbers" >
+            <input type="tel" placeholder="e.g 09877678788" name="number" id="numbers" required>
             <label for="cpurse">Select course you want</label>
             <select name="course" id="select-regis" ><br>
                 <option value="html">html essentsial</option>
@@ -91,6 +91,9 @@
 $(document).ready(function () {
   $("form").on("submit", function (event) {
     event.preventDefault();
+    
+
+
     window.location = "pages/thanks-page.html"
   if (localStorage.getItem("formData") === null) {
     let formData = [];
